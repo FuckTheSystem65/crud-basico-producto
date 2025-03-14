@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrar producto</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/@fluentui/svg-icons/fonts.css" rel="stylesheet" />
+     <script src="sweetalert.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Registrar producto</h1>
+            <form id="formulario">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="codigo_barras">
+                            <i class="ms-Icon ms-Icon--Barcode" aria-hidden="true"></i>
+                            Código de barras
+                        </label>
+                        <input type="text" id="codigo_barras" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre">
+                            <i class="ms-Icon ms-Icon--ProductCatalog" aria-hidden="true"></i>
+                            Nombre de producto
+                        </label>
+                        <input type="text" id="nombre" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="descripcion">
+                            <i class="ms-Icon ms-Icon--TextDocument" aria-hidden="true"></i>
+                            Descripción
+                        </label>
+                        <textarea id="descripcion" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="precio_compra">
+                            <i class="ms-Icon ms-Icon--Money" aria-hidden="true"></i>
+                            Precio de compra
+                        </label>
+                        <input type="number" id="precio_compra" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="precio_venta">
+                            <i class="ms-Icon ms-Icon--ShoppingCart" aria-hidden="true"></i>
+                            Precio de venta
+                        </label>
+                        <input type="number" id="precio_venta" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="stock">
+                            <i class="ms-Icon ms-Icon--Stack" aria-hidden="true"></i>
+                            Stock
+                        </label>
+                        <input type="number" id="stock" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="stock_minimo">
+                            <i class="ms-Icon ms-Icon--Warning" aria-hidden="true"></i>
+                            Stock Minimo
+                        </label>
+                        <input type="number" id="stock_minimo" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="unidad_de_medida">
+                            <i class="ms-Icon ms-Icon--Scale" aria-hidden="true"></i>
+                            Unidad de medida
+                        </label>
+                        <input type="text" id="unidad_de_medida">
+                    </div>
+                    <div class="form-group">
+                        <label for="estado">
+                            <i class="ms-Icon ms-Icon--CircleRing" aria-hidden="true"></i>
+                            Estado
+                        </label>
+                        <select id="estado" required>
+                            <option value="activo">Activo</option>
+                            <option value="inactivo">Inactivo</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="imagen">
+                            <i class="ms-Icon ms-Icon--ImagePixel" aria-hidden="true"></i>
+                            Imagen del producto
+                        </label>
+                        <input type="text" id="imagen" value="imagen.jpg">
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <i class="ms-Icon ms-Icon--Save" aria-hidden="true"></i>
+                    Registrar producto
+                </button>
+            </form>
+        </div>
+
+        <div class="table-container">
+            <h2>Productos registrados</h2>
+            <div class="table-wrapper">
+                <table id="productsTable">
+                    <thead>
+                        <tr>
+                    
+                            <th>Código de barras</th>
+                            <th>Nombre</th>
+                            <th>Costo</th>
+                            <th>Precio</th>
+                            <th>Stock</th> 
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaproductos"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
